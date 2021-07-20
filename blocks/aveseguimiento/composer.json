@@ -1,0 +1,18 @@
+{
+    "name": "alten/moodle-block_aveseguimiento",
+    "description": "Listado de seguimiento modelo ave cervantes",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "ALTEN",
+            "email": "alten@alten-formacion.es"
+        }
+    ],
+    "type": "moodle-block",
+    "require": {
+      "composer/installers": "~1.0"
+    },
+    "extra": {
+      "installer-name": "aveseguimiento"
+    }
+}

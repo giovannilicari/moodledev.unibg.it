@@ -1,0 +1,378 @@
+.compilatio-clear {
+    clear: both;
+}
+/*
+Compilatio document area :
+*/
+.compilatio-plagiarismreport {
+    padding: 0 0 0 2px;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    border: solid thin #e3e3e3;
+    cursor: pointer;
+}
+.compilatio-plagiarismreport,
+.compilatio-plagiarismreport a {
+    font-size: 12px;
+    text-align: center;
+    line-height: 19px;
+    font-weight: bold;
+}
+.compilatio-plagiarismreport .compilatio-error {
+    color: #c0392b;
+    line-height: 19px;
+}
+.compilatio-plagiarismreport a {
+    color: #444;
+}
+.compilatio-plagiarismreport a:hover {
+    color: #111;
+    text-decoration: underline;
+}
+.compilatio-plagiarismreport-link,
+.compilatio-plagiarismreport {
+    width: 120px;
+    height: 20px;
+}
+.compilatio-plagiarismreport-link {
+    display: block;
+    position: relative;
+}
+a.compilatio-plagiarismreport-link:hover {
+    text-decoration: none;
+}
+a.compilatio-plagiarismreport-link span.link:hover {
+    text-decoration: underline;
+}
+.compilatio-plagiarismreport .small-logo-compi {
+    float: left;
+}
+.compilatio-plagiarismreport .float-right,
+.compilatio-plagiarismreport .compilatio-similarity,
+.compilatio-plagiarismreport .compilatio-similarity-image {
+    float: right;
+}
+.compilatio-plagiarismreport img {
+    vertical-align: bottom;
+    padding-right: 2px;
+    height: 18px;
+}
+.compilatio-prevsubmitted {
+    font-size: 12px;
+    line-height: normal;
+}
+/* Similarities */
+.compilatio-similarity-green {
+    color: #6ab35a;
+}
+.compilatio-similarity-orange {
+    color: #f39c12;
+}
+.compilatio-similarity-red {
+    color: #e7685a;
+}
+.compilatio-similarity-image {
+    display: inline-block;
+    padding: 0;
+}
+.compilatio-similarity .compilatio-percentage {
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 22px;
+}
+.compilatio-similarity {
+    font-weight: bold;
+    display: inline-block;
+    line-height: 18px;
+    font-size: 18px;
+    text-decoration: none;
+}
+/* Compilatio small logo*/
+.small-logo-compi {
+    display: inline-block;
+    overflow: hidden;
+    text-indent: -99999px;
+    width: 25px;
+    height: 19px;
+    background: no-repeat scroll 0 0 transparent;
+    background-size: 50px 19px;
+    background-position: 0 0;
+    -webkit-transition: background-position 0.5s; /* Safari */
+    transition: background-position 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.11s;
+}
+.compilatio-plagiarismreport:hover .small-logo-compi {
+    background-position: -25px 0;
+}
+/*
+Head area in assignment
+*/
+#compilatio-hide-area {
+    float: right;
+}
+#compilatio-logo {
+    width: 200px;
+    float: left;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+.compilatio-help {
+    float: left;
+}
+#compi-help > p {
+    margin-top: 15px;
+}
+.compilatio-help img {
+    width: 24px;
+}
+.compilatio-greyBackgroundBorder {
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    border: solid thin #e3e3e3;
+}
+#compilatio-sommaire {
+    display: inline-block;
+    padding: 10px;
+}
+.compilatio-help-title {
+    margin: 10px 0;
+    font-weight: bold;
+    line-height: 20px;
+    font-size: 16px;
+    text-align: left;
+}
+.compilatio-help-content {
+    color: #555;
+    margin-bottom: 10px;
+}
+.compilatio-icon {
+    margin: 2px;
+    color: #616262;
+}
+.compilatio-icon.active {
+    color: #202121;
+}
+.compilatio-icon:hover {
+    color: #303030;
+}
+.compilatio-icon:focus {
+    color: #252525;
+}
+#compilatio-tabs .compilatio-icon {
+    margin-left: 35px;
+    display: inline;
+    cursor: pointer;
+}
+#compilatio-tabs {
+    border-bottom: 2px solid #e3e3e3;
+}
+.compilatio-tabs-content {
+    display: none;
+}
+#compilatio-show-notifications span {
+    position: relative;
+    top: 7px;
+    left: -14px;
+    background-color: #f00;
+    color: #fff;
+    border-radius: 20px;
+    padding: 1px 4px;
+    font-size: 11px;
+}
+.compilatio-button {
+    width: 30%;
+    margin: 0 2%;
+}
+#compilatio-button-container {
+    display: flex;
+    justify-content: center;
+}
+#compilatio-container {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 565px;
+    border-color: #e3e3e3;
+    min-height: 100px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    margin-top: 70px;
+    margin-left: 15px;
+    margin-right: 15px;
+    color: #444;
+}
+#compilatio-container h5 {
+    text-align: left;
+    margin: 10px 0;
+}
+/* Triangle */
+.compilatio-icon::before {
+    border-style: solid;
+    border-width: 0 6px 10px 6px;
+    border-color: transparent transparent #e3e3e3;
+    content: "";
+    position: relative;
+    top: 13px;
+    left: 19px;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    cursor: auto;
+}
+.compilatio-icon.active::before {
+    visibility: visible;
+}
+ul#compilatio-help-items > li > strong {
+    cursor: pointer;
+}
+ul#compilatio-help-items > li > div {
+    display: none;
+    margin-bottom: 15px;
+}
+#compilatio-programmed-analysis {
+    border-top: 2px solid #e3e3e3;
+    text-align: center;
+    font-style: italic;
+    margin-top: -3px;
+    padding-top: 2px;
+}
+/*!
+ * CSS adapted from Bootstrap (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+.compilatio-alert {
+    padding: 8px 35px 8px 14px;
+    margin-bottom: 20px;
+    background-color: #fcf8e3;
+    border: 1px solid #fbeed5;
+    border-radius: 4px;
+    color: #c09853;
+}
+.compilatio-alert-danger {
+    color: #b94a48;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+}
+.compilatio-alert-success {
+    color: #468847;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.compilatio-alert-info {
+    color: #3a87ad;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+.comp-button {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+    text-align: center;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    background-image: linear-gradient(to bottom, #fff, #e6e6e6);
+    background-repeat: repeat-x;
+    border-width: 1px;
+    border-style: solid;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #b3b3b3;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.comp-button:hover,
+.comp-button:focus {
+    color: #333;
+    text-decoration: none;
+    background-position: 0 -15px;
+    transition: background-position 0.11s linear 0.11s;
+    background-color: #e6e6e6;
+}
+.comp-button:active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+legend.compilatio_legend {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 40px;
+    color: #333;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+/* Config activity */
+.compilatio-after-input {
+    margin-left: 10px;
+}
+.compilatio-reinit {
+    font-size: 10px;
+}
+.compilatio-plagiarismreport-link:empty {
+    display: none;
+}
+#compilatio-container ul {
+    margin: 0 0 10px 25px;
+}
+.compilatio-area {
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    position: relative;
+    padding-top: 10px;
+    margin-right: 11px;
+}
+.compilatio-library,
+.compilatio-library-in,
+.compilatio-library-out {
+    width: 20px;
+    height: 16px;
+    background-size: cover;
+}
+.compilatio-library {
+    background-image: url([[pix:plagiarism_compilatio|library]]);
+}
+.compilatio-library-in {
+    background-image: url([[pix:plagiarism_compilatio|library-in]]);
+}
+.compilatio-library-out {
+    background-image: url([[pix:plagiarism_compilatio|library-out]]);
+}
+.compilatio-library-in,
+.compilatio-library-out {
+    cursor: pointer;
+}
+#compi-update-progress {
+    vertical-align: middle;
+    margin: auto 10px;
+}
+.compilatio-button.disabled {
+    opacity: 0.2;
+    filter: grayscale(100%);
+    cursor: default;
+}
+#compi-home > p {
+    margin-top: 15px;
+}
+.compi-alert {
+    position: relative;
+    top: -15px;
+}
+.compi-alert > img {
+    width: 14px;
+    position: relative;
+}
