@@ -3625,6 +3625,7 @@ class assign {
 
                 if ($this->is_blind_marking()) {
                     $prefix = str_replace('_', ' ', $groupname . get_string('participant', 'assign'));
+		    die(var_dump($this->get_uniqueid_for_user($userid)));
                     $prefix = clean_filename($prefix . '_' . $this->get_uniqueid_for_user($userid));
                 } else {
                     $fullname = fullname($student, has_capability('moodle/site:viewfullnames', $this->get_context()));
