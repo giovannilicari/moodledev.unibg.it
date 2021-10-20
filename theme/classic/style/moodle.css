@@ -10218,8 +10218,7 @@ form.popupform div {
 
 .no-overflow > .generaltable {
   position: relative;
-  margin-bottom: 0;
-  min-height: 10em; }
+  margin-bottom: 0; }
 
 .accesshide {
   position: absolute;
@@ -12099,9 +12098,9 @@ input[disabled] {
   .link-underline:focus {
     text-decoration: none; }
 
-.alert.cta .icon {
+.alert.cta .cta-icon .icon {
   padding: 0.3rem; }
-  .alert.cta .icon.fa {
+  .alert.cta .cta-icon .icon.fa {
     border-radius: 50%;
     border-style: solid;
     border-width: 0.125rem; }
@@ -16234,6 +16233,9 @@ a#hidebankcmd {
 .que label {
   display: inline; }
 
+.que .content .answer div[data-region="answer-label"] .mediaplugin {
+  width: 400px; }
+
 body.path-question-type .mform fieldset.hidden {
   padding: 0;
   margin: 0.7em 0 0; }
@@ -18528,6 +18530,12 @@ p.arrow_button {
   width: 100%;
   clear: both; }
 
+.path-grade-report-grader span.gradepass {
+  color: #357a32; }
+
+.path-grade-report-grader span.gradefail {
+  color: #ca3120; }
+
 #page-grade-grading-manage #activemethodselector label {
   display: inline-block; }
 
@@ -19063,7 +19071,7 @@ body {
 .count-container {
   padding: 2px;
   border-radius: 2px;
-  background-color: red;
+  background-color: #ca3120;
   color: white;
   font-size: 11px;
   line-height: 11px;
@@ -19151,7 +19159,7 @@ body {
 .navbar .count-container {
   padding: 2px;
   border-radius: 2px;
-  background-color: red;
+  background-color: #ca3120;
   color: white;
   font-size: 11px;
   line-height: 11px;
