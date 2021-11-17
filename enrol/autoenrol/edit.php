@@ -77,7 +77,10 @@ if ($mform->is_cancelled()) {
     if ($data->customint8 != 0 && $data->customint8 != 1) {
         $data->customint8 = 0;
     }
-    if (($data->customint6 != 0 && $data->customint6 != 1) || ($data->customint1 == 1)) {
+    if ($data->customint6 != 0 && $data->customint6 != 1) {
+        $data->customint6 = $plugin->get_config('selfunenrol');
+    } else if ($data->customint1 == 1) {
+        // If enrol at login enabled, disable selfunenrol.
         $data->customint6 = 0;
     }
     if (!isset($data->customint7)) {
@@ -135,7 +138,7 @@ if ($mform->is_cancelled()) {
                         'customtext1' => $data->customtext1,
                         'customtext2' => $data->customtext2,
                         'name' => $data->name,
-                        'roleid' => $plugin->get_config('roleid'),
+                        'roleid' => $plugin->get_config('defaultrole'),
                         'status' => $data->status,
                         'enrolperiod' => $data->enrolperiod,
                         'enrolstartdate' => $data->enrolstartdate,

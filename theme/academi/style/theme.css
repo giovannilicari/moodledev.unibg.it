@@ -3519,9 +3519,9 @@ tr.discussion .btn i.icon {
     padding: 0 20px;
     margin: 0 auto;
 }
-.mform .form-inline .custom-select {
+/* .mform .form-inline .custom-select {
     height: 40px;
-}
+} */
 
 @media (max-width: 767px) {
     .mform .form-inline .custom-select {

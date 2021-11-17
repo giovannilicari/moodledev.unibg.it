@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.3.4] - 2021-10-13
+### Added
+- default setting for selfunenrol in new instances
+- user enrolment manual confirmation option by [Andrew Hancox](https://github.com/andrewhancox)
+
+### Changed
+- removed the displayed "Auto" prefix from instances with a custom name by [Andrew Hancox](https://github.com/andrewhancox)
+
+### Fixed
+- default value for roleid
+- Fix #30 Undefined property: stdClass::$roleid by [Leon Stringer](https://github.com/leonstr)
+
 ## [2.3.3] - 2021-06-30
 ### Added
 - a CLI script to check and enable new enrolments in all instances
@@ -34,7 +46,7 @@ All notable changes to this project will be documented in this file.
 
 ## [2.2] - 2021-03-08
 ### Added
-- Commad line script and scheduled task for batch auto enrolment.
+- Command line script and scheduled task for batch auto enrolment.
 
 ### Fixed
 - Just enrolled courses in Dashboard with auto enrol on login.

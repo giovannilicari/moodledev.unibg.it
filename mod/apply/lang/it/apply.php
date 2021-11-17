@@ -30,12 +30,12 @@ $string['accept_entry'] = 'accettata';
 $string['acked_accept'] = 'Accettata';
 $string['acked_notyet'] = 'Non ancora';
 $string['acked_reject'] = 'Rifiutato';
-$string['add_item']  = 'Aggiungi voce attività';
-$string['add_items'] = 'Aggiungi voci attività';
+$string['add_item']  = 'Aggiungi un tipo di oggetto';
+$string['add_items'] = 'Aggiungi un tipo di oggetto';
 $string['add_pagebreak'] = 'Aggiungi interruzione pagina';
 $string['adjustment'] = 'Regolazione';
-$string['apply_is_not_ready'] = 'Apply is not ready yet. Please edit items first.';
-$string['apply:addinstance'] = 'Aggiungi nuova candidatura';
+$string['apply_is_not_ready'] = 'La domanda non è ancora pronta. Modifica prima gli elementi.';
+$string['apply:addinstance'] = 'Aggiungi nuova domanda';
 $string['apply:applies'] = 'nuova domanda';
 $string['apply:createprivatetemplate'] = 'Crea private template';
 $string['apply:createpublictemplate'] = 'Crea pubblico template';
@@ -43,158 +43,158 @@ $string['apply:deletetemplate'] = 'Cancella template';
 $string['apply:deletesubmissions'] = 'Delete submissions';
 $string['apply:edititems'] = 'Modifica elementi';
 $string['apply:edittemplates'] = 'Modifica Templates';
-$string['apply:mapcourse'] = 'Map courses to global applys';
-$string['apply:operatesubmit'] = 'Operation of Entry';
+$string['apply:mapcourse'] = 'Mappa i corsi su candidature globali';
+$string['apply:operatesubmit'] = 'Operazione di ingresso';
 $string['apply:preview'] = 'Anteprima';
-$string['apply:receivemail'] = 'Receive email notification';
-$string['apply:submit'] = 'Submit a Entry';
-$string['apply:preview_submit'] = 'Submit Screen Preview';
-$string['apply:view'] = 'View a Apply';
-$string['apply:viewentries'] = 'List of Entries';
-$string['apply:viewanalysepage'] = 'View the analysis page after submit';
-$string['apply:viewreports'] = 'View reports';
-$string['apply_is_already_submitted'] = 'Application is already submitted';
-$string['apply_is_closed'] = 'Application period is closed';
-$string['apply_is_disable'] = 'You ca not use this Apply.';
-$string['apply_is_not_open'] = 'Application is not opened yet';
-$string['apply_options'] = 'Apply options';
-$string['average'] = 'Average';
-$string['back_button'] = ' Back ';
-$string['before_apply'] = 'Before submit';
-$string['cancel_entry'] = 'Cancel';
-$string['cancel_entry_button'] = ' Cancel ';
-$string['cancel_moving'] = 'Cancel moving';
-$string['cannot_save_templ'] = 'saving templates is not allowed';
+$string['apply:receivemail'] = 'Ricevi una notifica via e-mail';
+$string['apply:submit'] = 'Invia';
+$string['apply:preview_submit'] = 'Invia anteprima schermata';
+$string['apply:view'] = 'Visualizza una candidatura';
+$string['apply:viewentries'] = 'Elenco domanda';
+$string['apply:viewanalysepage'] = 'Visualizza la pagina di analisi dopo l\'invio';
+$string['apply:viewreports'] = 'Visualizza reports';
+$string['apply_is_already_submitted'] = 'La domanda è già stata presentata';
+$string['apply_is_closed'] = 'Il periodo di candidatura è chiuso';
+$string['apply_is_disable'] = 'Candidatura disabilitata';
+$string['apply_is_not_open'] = 'L\'applicazione non è ancora aperta';
+$string['apply_options'] = 'Candidatura optioni';
+$string['average'] = 'Media';
+$string['back_button'] = ' Indietro ';
+$string['before_apply'] = 'Prima di inviare';
+$string['cancel_entry'] = 'Cancella';
+$string['cancel_entry_button'] = ' Cancella ';
+$string['cancel_moving'] = 'Cancella spostamento';
+$string['cannot_save_templ'] = 'il salvataggio dei modelli non è consentito';
 $string['captcha'] = 'Captcha';
 $string['check'] = 'Check Box';
 $string['checkbox'] = 'Check Boxes';
 $string['class_cancel']  = 'Cancel';
-$string['class_draft']   = 'Draft';
+$string['class_draft']   = 'Bozza';
 $string['class_newpost'] = 'New Post';
 $string['class_update']  = 'Update';
-$string['confirm_cancel_entry'] = 'Are you sure you want to cancel this entry?';
-$string['confirm_delete_entry'] = 'Are you sure you want to Withdraw this entry?';
-$string['confirm_delete_item'] = 'Are you sure you want to delete this element?';
-$string['confirm_delete_submit'] = 'Are you sure you want to delete this application?';
-$string['confirm_delete_template'] = 'Are you sure you want to delete this template?';
-$string['confirm_rollback_entry'] = 'Are you sure you want to withdraw this entry?';
-$string['confirm_use_template'] = 'Are you sure you want to use this template?';
-$string['count_of_nums'] = 'Count of numbers';
-$string['creating_templates'] = 'Save these questions as a new template';
-$string['delete_entry'] = 'Withdraw';
-$string['delete_entry_button'] = ' Withdraw ';
-$string['delete_item'] = 'Delete item';
-$string['delete_submit'] = 'Delete application';
-$string['delete_template'] = 'Delete template';
-$string['delete_templates'] = 'Delete template...';
-$string['depending'] = 'Dependencies';
-$string['depending_help'] = 'It is possible to show an item depending on the value of another item.<br />
-<strong>Here is an example.</strong><br />
+$string['confirm_cancel_entry'] = 'Sei sicuro di voler cancellare questa domanda?';
+$string['confirm_delete_entry'] = 'Sei sicuro di voler ritirare questa domanda?';
+$string['confirm_delete_item'] = 'Sei sicuro di voler cancellare questo oggetto?';
+$string['confirm_delete_submit'] = 'Sei sicuro di voler cancellare questa domanda?';
+$string['confirm_delete_template'] = 'Sei sicuro di voler cancellare questa template?';
+$string['confirm_rollback_entry'] = 'Sei sicuro di voler ritirare questa domanda?';
+$string['confirm_use_template'] = 'Sei sicuro di voler usare questa template?';
+$string['count_of_nums'] = 'Conteggio dei numeri';
+$string['creating_templates'] = 'Salva queste domande come nuovo modello';
+$string['delete_entry'] = 'Ritirare';
+$string['delete_entry_button'] = ' Ritirare ';
+$string['delete_item'] = 'Cancella oggetto';
+$string['delete_submit'] = 'Cancella domanda';
+$string['delete_template'] = 'Cancella template';
+$string['delete_templates'] = 'cancella template...';
+$string['depending'] = 'Dipendenze';
+$string['depending_help'] = 'È possibile mostrare un oggetto a seconda del valore di un altro oggetto.<br />
+<strong>Ecco un esempio.</strong><br />
 <ul>
-<li>First, create an item on which another item will depend on.</li>
-<li>Next, add a pagebreak for depending.</li>
-<li>Then add the items dependant on the value of the item created before. Choose the item from the list labelled "Dependence item" and write the required value in the textbox labelled "Dependence value".</li>
+<li>Per prima cosa, crea un elemento da cui dipenderà un altro elemento.</li>
+<li>Successivamente, aggiungi un\'interruzione di pagina per dipendere.</li>
+<li>Quindi aggiungi gli elementi in base al valore dell\'elemento creato in precedenza. Scegli l\'elemento dall\'elenco denominato "Elemento di dipendenza" e scrivi il valore richiesto nella casella di testo denominata "Valore di dipendenza".</li>
 </ul>
-<strong>The item structure should look like this.</strong>
+<strong>La struttura dell\'elemento dovrebbe essere simile a questa.</strong>
 <ol>
-<li>Item Q: Do you have a car? A: yes/no</li>
-<li>Pagebreak for depending</li>
-<li>Item Q: What colour is your car?<br />
-(this item depends on item 1 with value = yes)</li>
-<li>Item Q: Why don\'t you have a car?<br />
-(this item depends on item 1 with value = no)</li>
-<li> ... other items</li>
+<li>Articolo Q: Hai una macchina? A: sì/no</li>
+<li>Pagebreak per dipendere</li>
+<li>Articolo Q: Di che colore è la tua auto?<br />
+(questo articolo dipende dall\'articolo 1 con valore = sì)</li>
+<li>Articolo Q: Perché non hai una macchina?<br />
+(questo articolo dipende dall\'articolo 1 con valore = no)</li>
+<li> ... altri articoli</li>
 </ol>';
-$string['dependitem'] = 'Dependence item';
-$string['dependvalue'] = 'Dependence value';
-$string['description'] = 'Description';
+$string['dependitem'] = 'Elemento di dipendenza';
+$string['dependvalue'] = 'Valore di dipendenza';
+$string['description'] = 'Descrizione';
 $string['display_button'] = ' Display ';
-$string['do_not_analyse_empty_submits'] = 'Do not analyse empty submits';
+$string['do_not_analyse_empty_submits'] = 'Non analizzare gli invii vuoti';
 $string['dropdown'] = 'Dropdown List';
-$string['edit_entry'] = 'Edit';
-$string['edit_entry_button'] = ' Edit ';
-$string['edit_item'] = 'Edit question';
-$string['edit_items'] = 'Edit Items';
+$string['edit_entry'] = 'Modifica';
+$string['edit_entry_button'] = ' Modifica ';
+$string['edit_item'] = 'Modifica domanda';
+$string['edit_items'] = 'Modifica Oggetto';
 
-$string['email_entry'] = 'Send email to applicant';
-$string['email_notification'] = 'Send email notifications to admin';
-$string['email_notification_help'] = 'If enabled, administrators receive email notification of apply submissions.';
-$string['email_notification_user'] = 'send email notifications to applicants';
-$string['email_notification_user_help'] = 'If enabled, administrator can send email of apply processes to applicants.';
+$string['email_entry'] = 'Invia e-mail al richiedente';
+$string['email_notification'] = 'Invia notifiche e-mail all\'amministratore';
+$string['email_notification_help'] = 'Se abilitato, gli amministratori ricevono un\'e-mail di notifica degli invii di candidatura.';
+$string['email_notification_user'] = 'terminare le notifiche e-mail ai candidati';
+$string['email_notification_user_help'] = 'Se abilitato, l\'amministratore può inviare un\'e-mail dei processi di candidatura ai candidati.';
 $string['email_confirm_text'] = ' : \'{$a->apply}\'
 
 You can view it here:
 {$a->url}';
-$string['email_confirm_html'] = ' : <i>\'{$a->apply}\'</i><br /><br /> You can view it <a href="{$a->url}">here</a>.';
-$string['email_teacher'] = '{$a->username} has submitted apply activity';
-$string['email_user_done']   = 'Your application is processing has been completed';
-$string['email_user_accept'] = 'Your application was accepted';
-$string['email_user_reject'] = 'Your application was rejected';
-$string['email_user_other']  = 'The administrator has processed your application';
-$string['email_noreply'] = 'This email is automatically. Please do not reply to this email.';
+$string['email_confirm_html'] = ' : <i>\'{$a->apply}\'</i><br /><br /> Tu puoi vedere <a href="{$a->url}">here</a>.';
+$string['email_teacher'] = '{$a->username} ha inviato l\'attività di domanda';
+$string['email_user_done']   = 'La tua domanda è stata creata';
+$string['email_user_accept'] = 'La tua domanda è stata accettata';
+$string['email_user_reject'] = 'La tua domanda è stata rifiutata';
+$string['email_user_other']  = 'L\'amministratore ha elaborato la tua richiesta';
+$string['email_noreply'] = 'Questa email è automatica. per favore non rispondere a questa email.';
 //
-$string['only_acked_accept'] = 'Reception Only';
+$string['only_acked_accept'] = 'Solo ricezione';
 $string['only_acked_accept_help'] = 'Enable to only accept reception. Specify when processing is not required.'; 
 $string['enable_deletemode'] = 'Delete Mode';
-$string['enable_deletemode_help'] = 'This enables a teacher to delete all applications.<br />Usually, please set to "No" for safety.'; 
-$string['can_discard'] = 'Can Discard';
-$string['can_discard_help'] = 'Enable cancellation of application.'; 
-$string['date_format']      = 'Display format of date(time)';
+$string['enable_deletemode_help'] = 'Ciò consente a un insegnante di eliminare tutte le domanda.<br />Di solito, impostare su "No" per sicurezza.'; 
+$string['can_discard'] = 'Puoi scartare';
+$string['can_discard_help'] = 'Abilita cancellazione domanda.'; 
+$string['date_format']      = 'Formato di visualizzazione della data(time)';
 $string['date_format_default'] = '%m/%d/%y %H:%M';
-$string['date_format_help'] = 'Specify display format of date and time. The default is %m/%d/%y %H:%M';
-$string['entries_list_title'] = 'List of Entries';
-$string['entry_saved'] = 'Your applocation has been saved. Thank you.';
-$string['entry_saved_draft'] = 'Your applocation has been saved as <strong>Draft</strong>.';
-$string['entry_saved_operation'] = 'Your request has been processed.';
-$string['execd_done']    = 'Competato';
+$string['date_format_help'] = 'Specificare il formato di visualizzazione di data e ora. L\'impostazione predefinita è%m/%d/%y %H:%M';
+$string['entries_list_title'] = 'Elenco delle voci';
+$string['entry_saved'] = 'La tua domanda è stata salvata. <strong>Grazie</strong>.';
+$string['entry_saved_draft'] = 'La tua domanda è stata salvata in <strong>Bozza</strong>.';
+$string['entry_saved_operation'] = 'La tua richiesta è stata elaborata.';
+$string['execd_done']    = 'Completato';
 $string['execd_entry']  = 'completato';
-$string['execd_notyet']  = 'Not Yet';
+$string['execd_notyet']  = 'Non ancora';
 $string['exist'] = 'Exist';
 $string['export_templates'] = 'Export templates';
-$string['hide_no_select_option'] = 'Hide the "Not selected" option';
-$string['horizontal'] = 'horizontal';
+$string['hide_no_select_option'] = 'Nascondi l\'opzione "Non selezionato"';
+$string['horizontal'] = 'Orizzontale';
 $string['import_templates'] = 'Import templates';
-$string['info'] = 'Information';
-$string['infotype'] = 'Information-Type';
+$string['info'] = 'Infomazioni';
+$string['infotype'] = 'Informazioni-Tipo';
 $string['item_label'] = 'Label';
 $string['item_label_help'] = 'Special Labels<br />
 <ul>
 <li><strong>submit_title</strong>
-<ul><li>When this label is attached to the textfield (Short text answer), it is treated as a title of an application.</li></ul>
+<ul><li>Quando questa etichetta è allegata al campo di testo (risposta breve), viene trattata come il titolo di una domanda.</li></ul>
 </li>
 <li><strong>submit_only</strong>
-<ul><li>This is an item displayed only at the time of an application. This is used for use consent etc.</li></ul>
+<ul><li>Questo è un elemento visualizzato solo al momento di una domanda. Questo viene utilizzato per il consenso all\'uso, ecc.</li></ul>
 </li>
 <li><strong>admin_reply</strong>
-<ul><li>Although not displayed on a user at the time of an application, it is displayed after an application. 
-Since the administrator can edit, This is uses for the comment from an administrator, etc. </li></ul>
+<ul><li>Sebbene non sia visualizzato su un utente al momento di un\'applicazione, viene visualizzato dopo un\'applicazione.
+Poiché l\'amministratore può modificare, questo viene utilizzato per il commento di un amministratore, ecc. </li></ul>
 </li>
-<li><strong>admin_only</strong>
-<ul><li>This is an item which can be displayed to only an administrator and can be edited by only an administrator. 
-It is used for an administrator\'s memo etc.</li></ul>
+<li><strong>solo_admin</strong>
+<ul><li>Questo è un elemento che può essere visualizzato solo da un amministratore e può essere modificato solo da un amministratore.
+Viene utilizzato per il promemoria di un amministratore, ecc.</li></ul>
 </li>
 </ul>';
 
-$string['item_name'] = 'Item Name';
-$string['items_are_required'] = 'Answers are required to starred items.';
+$string['item_name'] = 'Nome Oggetto';
+$string['items_are_required'] = 'Le risposte sono obbligatorie.';
 $string['label'] = 'Label';
 $string['maximal'] = 'maximal';
-$string['modulename'] = 'Application Form';
-$string['modulename_help'] = 'You can make simple Application Forms and make a user submit it.';
-$string['modulenameplural'] = 'Application Forms';
-$string['move_here'] = 'Move here';
-$string['move_item'] = 'Move this question';
-$string['movedown_item'] = 'Move this question down';
-$string['moveup_item'] = 'Move this question up';
+$string['modulename'] = 'Form Domanda';
+$string['modulename_help'] = 'Puoi creare semplici moduli di domanda e farli inviare da un utente.';
+$string['modulenameplural'] = 'I moduli di domanda';
+$string['move_here'] = 'Sposta qui';
+$string['move_item'] = 'Sposta questa domanda';
+$string['movedown_item'] = 'Sposta questa domanda giù';
+$string['moveup_item'] = 'Sposta questa domanda in alto';
 $string['multichoice'] = 'Multiple choice';
 $string['multichoice_values'] = 'Multiple choice values';
 $string['multichoicerated'] = 'Multiple choice (rated)';
 $string['multichoicetype'] = 'Multiple choice type';
 $string['multiple_submit'] = 'Multiple Submissions';
-$string['multiple_submit_help'] = 'If enabled for anonymous surveys, users can submit apply an unlimited number of times.';
+$string['multiple_submit_help'] = 'Se abilitato per sondaggi anonimi, gli utenti possono inviare candidature un numero illimitato di volte.';
 $string['name'] = 'Name';
-$string['name_required'] = 'Name required';
-$string['next_page_button'] = ' Next page ';
+$string['name_required'] = 'Nome (obbligatorio)';
+$string['next_page_button'] = ' Prossima pagina ';
 $string['no_itemlabel'] = 'No label';
 $string['no_itemname'] = 'No itemname';
 $string['no_items_available_yet'] = 'No questions have been set up yet';
@@ -210,9 +210,9 @@ $string['numeric_range_to'] = 'Range to';
 $string['only_one_captcha_allowed'] = 'Only one captcha is allowed in a apply';
 $string['operate_is_disable'] = 'You ca not use this Operation';
 $string['operate_submit'] = 'Operate';
-$string['operate_submit_button'] = ' Process ';
+$string['operate_submit_button'] = ' Elaborazione ';
 $string['operation_error_execd'] = 'When you do not accept entry, you can not checke "done"';
-$string['overview'] = 'Overview and Submit';
+$string['overview'] = 'Panoramica domanda';
 $string['pagebreak'] = 'Page break for depending';
 $string['pluginadministration'] = 'Apply administration';
 $string['pluginname'] = 'Application Form';
@@ -220,7 +220,7 @@ $string['position'] = 'Position';
 $string['preview'] = 'Preview';
 $string['preview_help'] = 'In the preview you can change the order of questions.';
 $string['previous_apply'] = 'Previous submit';
-$string['previous_page_button'] = ' Previous page ';
+$string['previous_page_button'] = ' Precedente pagina ';
 $string['public'] = 'Public';
 $string['radio'] = 'Radio Button';
 $string['radiobutton'] = 'Radio Button';
@@ -231,104 +231,104 @@ $string['related_items_deleted'] = 'All your user\'s responses for this question
 $string['required'] = 'Required';
 $string['resetting_data'] = 'Reset apply responses';
 $string['responsetime'] = 'Responsestime';
-$string['returnto_course'] = 'Return';
-$string['rollback_entry'] = 'Withdraw';
-$string['rollback_entry_button'] = ' Withdraw ';
-$string['save_as_new_item'] = 'Save as new question';
-$string['save_as_new_template'] = 'Save as new template';
-$string['save_draft_button']  = ' Save as draft ';
-$string['save_entry_button']  = ' Submit this entry ';
-$string['save_item'] = 'Save item';
-$string['saving_failed'] = 'Saving failed';
+$string['returnto_course'] = 'Ritorna al corso';
+$string['rollback_entry'] = 'Ritirare';
+$string['rollback_entry_button'] = ' Ritirare ';
+$string['save_as_new_item'] = 'Salva nuova domanda';
+$string['save_as_new_template'] = 'Salva nuovo template';
+$string['save_draft_button']  = ' Salva bozza ';
+$string['save_entry_button']  = ' Invia domanda ';
+$string['save_item'] = 'Salva oggetto';
+$string['saving_failed'] = 'Salvataggio fallito';
 $string['saving_failed_because_missing_or_false_values'] = 'Saving failed because missing or false values.';
 $string['separator_decimal'] = '.';
 $string['separator_thousand'] = ',';
 $string['show_all'] = 'Show all {$a}';
-$string['show_perpage'] = 'Show {$a} per page';
-$string['start'] = 'Start';
-$string['started'] = 'started';
-$string['stop'] = 'End';
-$string['subject'] = 'Subject';
-$string['submit_form_button'] = ' New Application ';
-$string['submit_new_apply']   = 'Submit a new Apply';
+$string['show_perpage'] = 'Visualizza {$a} per pagina';
+$string['start'] = 'Avvio';
+$string['started'] = 'avviato';
+$string['stop'] = 'Fine';
+$string['subject'] = 'Oggetto';
+$string['submit_form_button'] = ' Nuova domanda ';
+$string['submit_new_apply']   = 'Invia una nuova domanda';
 $string['submitted'] = 'submitted';
-$string['switch_item_to_not_required'] = 'switch to: answer not required';
-$string['switch_item_to_required'] = 'switch to: answer required';
-$string['template_saved'] = 'Template saved';
+$string['switch_item_to_not_required'] = 'cambia in: risposta non obbligatoria';
+$string['switch_item_to_required'] = 'cambia in: risposta obbligatoria';
+$string['template_saved'] = 'Template salvato';
 $string['templates'] = 'Templates';
 $string['textarea'] = 'Longer text answer';
-$string['textarea_height'] = 'Number of lines';
-$string['textarea_width'] = 'Width';
-$string['textfield'] = 'Short text answer';
-$string['textfield_maxlength'] = 'Maximum characters accepted';
-$string['textfield_size'] = 'Textfield width';
-$string['outside_style'] = 'Border style of item';
+$string['textarea_height'] = 'Numero di linee';
+$string['textarea_width'] = 'Larghezza';
+$string['textfield'] = 'Risposta di testo breve';
+$string['textfield_maxlength'] = 'Caratteri massimi accettati';
+$string['textfield_size'] = 'Larghezza del campo di testo';
+$string['outside_style'] = 'Stile del bordo dell\'elemento';
 $string['outside_style_default'] = 'border: 0px solid';
 $string['outside_style_help'] = 'The style of the border around the item. This setting is ignored in the table. The default is ( border: 0px solid )';
-$string['item_style'] = 'Style of item';
+$string['item_style'] = 'Stile di un oggetto';
 $string['item_style_default'] = '';
-$string['item_style_help'] = 'The style of the item. The Default is (  )';
+$string['item_style_help'] = 'Lo stile dell\'oggetto. Il valore predefinito è (  )';
 
-$string['time_close'] = 'Time to close';
+$string['time_close'] = 'È ora di chiudere';
 $string['time_close_help'] = 'You can specify times when the apply is accessible for people to answer the applications. 
 If the checkbox is not ticked there is no limit defined.';
 $string['time_open'] = 'Time to open';
 $string['time_open_help'] = 'You can specify times when the apply is accessible for people to answer the applications. 
 If the checkbox is not ticked there is no limit defined.';
-$string['title_ack']   = 'Recept.';
-$string['title_before'] = 'Before Submit';
-$string['title_check'] = 'Check';
-$string['title_class'] = 'Status';
-$string['title_draft'] = 'Draft';
-$string['title_exec']  = 'Exec. ';
-$string['title_title'] = 'Title';
-$string['title_version'] = 'Ver.';
-$string['update_entry'] = 'Update';
-$string['update_entry_button'] = ' Update ';
-$string['update_item'] = 'Save changes to question';
-$string['use_calendar'] = 'Use Calendar';
-$string['use_calendar_help'] = 'The period for submission of an application is registered into a calendar.';
-$string['use_item'] = 'use {$a}';
+$string['title_ack']   = 'Ricevuto';
+$string['title_before'] = 'Prima di inviarla';
+$string['title_check'] = 'Controllo';
+$string['title_class'] = 'Stato';
+$string['title_draft'] = 'Bozza';
+$string['title_exec']  = 'Elaborazione ';
+$string['title_title'] = 'Titolo';
+$string['title_version'] = 'Versione';
+$string['update_entry'] = 'Aggiorna';
+$string['update_entry_button'] = ' Aggiorna ';
+$string['update_item'] = 'Salva i cambiamenti alla domanda';
+$string['use_calendar'] = 'Usa il calendario';
+$string['use_calendar_help'] = 'Il termine per la presentazione della domanda è registrato in un calendario.';
+$string['use_item'] = 'usa {$a}';
 $string['use_one_line_for_each_value'] = 'Use one line for each value!';
 $string['use_this_template'] = 'Use this template';
-$string['user_pic']  	 = 'Picture';
-$string['username_manage'] = 'Manage of Username';
-$string['username_manage_help'] = 'You can select displied name pattern in this module.';
+$string['user_pic']  	 = 'Foto';
+$string['username_manage'] = 'Gestione username';
+$string['username_manage_help'] = 'È possibile selezionare il modello del nome visualizzato in questo modulo.';
 //$string['firstname'] = get_string('firstname');
 //$string['lastname']  = get_string('lastname');
 $string['firstlastname'] = 'firstname lastname';
 $string['lastfirstname'] = 'lastname firstname';
-$string['using_templates'] = 'Use a template';
-$string['vertical'] = 'vertical';
-$string['view_entries'] = 'Show Entries';
-$string['wiki_url'] = 'http://www.nsl.tuis.ac.jp/xoops/modules/xpwiki/?mod_apply%20%28E%29';
-$string['yes_button'] = ' Yes ';
+$string['using_templates'] = 'Usa un template';
+$string['vertical'] = 'verticale';
+$string['view_entries'] = 'Mostra candidature';
+$string['wiki_url'] = '';
+$string['yes_button'] = ' Si ';
 
-$string['submit_num'] = 'Submitted number';
+$string['submit_num'] = 'Numero inviato';
 
 // for new added items (1.3.0)
-$string['fixedtitle'] = 'Fixed Title';
-$string['tablestart'] = 'Table Start';
-$string['tableend']   = 'Table End';
-$string['no_table']   = 'Table is not started!';
-$string['nested_table'] = 'Table is nested!';
-$string['not_close_table'] = 'The table is not closed';
-$string['table_columns'] = 'Number of columns';
-$string['table_border'] = 'Border size of inside table';
-$string['table_border_help'] = 'The border size of the frame of table is incremented by 1';
-$string['table_border_style'] = 'Border style of inside table';
-$string['table_border_style_help'] = 'The border style of outside table is solid (fix)';
-$string['table_th_sizes'] = 'Width(px) of each column';
-$string['table_th_sizes_help'] = 'Specify the width (px unit) of each column separated by commas.';
-$string['table_th_strings'] = 'Title of each column';
-$string['table_th_strings_help'] = 'Describe the title of each column separated by line feed. That is, one title is written on one line.';
-$string['table_disp_iname'] = 'Display item name';
-$string['table_disp_iname_help'] = 'Display the name of the item in table.';
+$string['fixedtitle'] = 'Titolo fisso';
+$string['tablestart'] = 'Tabella inizio';
+$string['tableend']   = 'Tabella fine';
+$string['no_table']   = 'Tabella non è avviata!';
+$string['nested_table'] = 'Tabella è annidato!';
+$string['not_close_table'] = 'La tabella non è chiusa';
+$string['table_columns'] = 'Numero di colonne';
+$string['table_border'] = 'Grandezza Bordo dentro la tabella';
+$string['table_border_help'] = 'La dimensione del bordo della cornice della tabella viene incrementata di 1';
+$string['table_border_style'] = 'Stile del bordo della tabella interna';
+$string['table_border_style_help'] = 'Lo stile del bordo del tabella esterna è solido (corretto)';
+$string['table_th_sizes'] = 'Larghezza (px) di ogni colonna';
+$string['table_th_sizes_help'] = 'Specifica la larghezza (unità px) di ogni colonna separata da virgole.';
+$string['table_th_strings'] = 'Titolo di ogni colonna';
+$string['table_th_strings_help'] = 'Descrivi il titolo di ogni colonna separato dal feed di riga. Cioè, un titolo è scritto su una riga.';
+$string['table_disp_iname'] = 'Visualizza il nome dell\'elemento';
+$string['table_disp_iname_help'] = 'Visualizza il nome dell\'elemento nella tabella';
 
 //
-$string['printpagebreak']  = 'Add a page break for printing';
-$string['pagebreak_title'] = 'Page Break for Printing';
-$string['pagebreak_style'] = 'Style of page break line';
+$string['printpagebreak']  = 'Aggiungi un\'interruzione di pagina per la stampa';
+$string['pagebreak_title'] = 'Interruzione di pagina per la stampa';
+$string['pagebreak_style'] = 'Stile della linea di interruzione di pagina';
 $string['pagebreak_style_default'] = '1px solid';
-$string['pagebreak_style_help'] = 'The style of the page break line (&lt; hr /&gt;). The Default is ( 1px solid ). In case of empty, the line is not drawn on print screen. The page break line is not displayed on the submit screen and the preview of the submit screen.';
+$string['pagebreak_style_help'] = 'Lo stile della linea di interruzione di pagina (&lt; hr /&gt;). Il valore predefinito è (1 pixel solido). In caso di vuoto, la linea non viene disegnata sulla schermata di stampa. La riga di interruzione di pagina non viene visualizzata nella schermata di invio e nell\'anteprima della schermata di invio.';
 

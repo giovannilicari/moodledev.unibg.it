@@ -8,12 +8,15 @@ Compilatio is a commercial Plagiarism Prevention product - you must have a paid 
 
 CHANGES
 - Add support for essay question in quiz (Moodle 3.11).
+- Add error handling for documents with too many words.
 
 FIXES
 - Fix SQL Query to search document author for PostgresSQL.
 - Fix SQL Query to export global statistics to CSV for PostgresSQL.
 - Fix function to get not uploaded documents in order to analyse all documents in assign retroactively.
 - Fix document not automatically indexed in reference library.
+- Fix calls to unset "nb_mots_min" setting.
+- User's name is no longer displayed in error messages for anonymous assignments.
 
 QUICK INSTALL
 ================

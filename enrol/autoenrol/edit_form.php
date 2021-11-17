@@ -144,7 +144,7 @@ class enrol_autoenrol_edit_form extends moodleform {
         // Self unenrol.
         $this->_form->addElement('selectyesno', 'customint6', get_string('selfunenrol', 'enrol_autoenrol'));
         $this->_form->setType('customint6', PARAM_INT);
-        $this->_form->setDefault('customint6', 0);
+        $this->_form->setDefault('customint6', $plugin->get_config('selfunenrol'));
         $this->_form->addHelpButton('customint6', 'selfunenrol', 'enrol_autoenrol');
         $this->_form->disabledIf('customint6', 'customint1', 'eq', '1');
 
@@ -291,7 +291,7 @@ class enrol_autoenrol_edit_form extends moodleform {
 
         $validstatus = array_keys($this->get_status_options());
         $context = context_course::instance($instance->courseid);
-        $validroles = array_keys($this->extend_assignable_roles($context, $instance->roleid));
+        $validroles = array_keys($this->extend_assignable_roles($context, $data['roleid']));
         $validexpirynotify = array_keys($this->get_expirynotify_options());
         $validenrolmethod = array_keys($this->get_enrolmethod_options());
         $validlongtimenosee = array_keys($this->get_longtimenosee_options());
@@ -373,7 +373,8 @@ class enrol_autoenrol_edit_form extends moodleform {
      */
     protected function get_enrolmethod_options() {
         $options = array( 0 => get_string('m_course', 'enrol_autoenrol'),
-                          1 => get_string('m_site', 'enrol_autoenrol'));
+                          1 => get_string('m_site', 'enrol_autoenrol'),
+                          2 => get_string('m_confirmation', 'enrol_autoenrol'));
         return $options;
     }
 

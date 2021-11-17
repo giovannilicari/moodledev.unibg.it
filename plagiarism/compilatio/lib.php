@@ -389,6 +389,13 @@ class plagiarism_plugin_compilatio extends plagiarism_plugin
             $output .= output_helper::get_plagiarism_area($domid, $span, $image, $title, "",
                 "", true, $indexingstate, $docwarning);
 
+        } else if ($results['statuscode'] == COMPILATIO_STATUSCODE_TOO_LONG) {
+            $span = get_string("error", "plagiarism_compilatio");
+            $image = "exclamation";
+            $title = get_string('toolong', 'plagiarism_compilatio', get_config('plagiarism_compilatio', 'nb_mots_max'));
+            $output .= output_helper::get_plagiarism_area($domid, $span, $image, $title, "",
+                "", true, $indexingstate, $docwarning);
+
         } else if ($results['statuscode'] == COMPILATIO_STATUSCODE_UNEXTRACTABLE) {
             $span = get_string("error", "plagiarism_compilatio");
             $image = "exclamation";
@@ -778,6 +785,18 @@ function plagiarism_compilatio_before_standard_top_of_body_html() {
         );
     }
 
+    // Display a notification for the too long files.
+    $files = compilatio_get_too_long_files($cmid);
+    if (count($files) !== 0) {
+        $list = "<ul><li>" . implode("</li><li>", $files) . "</li></ul>";
+        $alerts[] = array(
+            "class" => "danger",
+            "title" => get_string("toolong_files", "plagiarism_compilatio",
+                get_config('plagiarism_compilatio', 'nb_mots_max')),
+            "content" => $list,
+        );
+    }
+
     // Display a notification for the unextractable files.
     $files = compilatio_get_unextractable_files($cmid);
     if (count($files) !== 0) {
@@ -960,23 +979,23 @@ function plagiarism_compilatio_before_standard_top_of_body_html() {
         $output .= "</div>";
     }
 
-    $idcourt = optional_param('idcourt', null, PARAM_RAW);
+    $idDocument = optional_param('idcourt', null, PARAM_RAW);
 
     // Search tab.
     $output .= "<div id='compi-search' class='compilatio-tabs-content'>
         <h5>" . get_string("compilatio_search_tab", "plagiarism_compilatio") . "</h5>
         <p>" . get_string("compilatio_search_help", "plagiarism_compilatio") . "</p>
         <form class='form-inline' action=" . $PAGE->url . " method='post'>
-            <input class='form-control m-2' type='text' id='idcourt' name='idcourt' value='" . $idcourt
+            <input class='form-control m-2' type='text' id='idcourt' name='idcourt' value='" . $idDocument
                 . "' placeholder='" . get_string("compilatio_iddocument", "plagiarism_compilatio") . "'>
             <input class='btn btn-primary' type='submit' value='" .get_string("compilatio_search", "plagiarism_compilatio"). "'>
         </form>";
 
-    if (!empty($idcourt)) {
+    if (!empty($idDocument)) {
         $sql = "SELECT usr.lastname, usr.firstname, cf.idcourt, cf.cm FROM {plagiarism_compilatio_files} cf
             JOIN {user} usr on cf.userid = usr.id
-            WHERE cf.idcourt = ?";
-        $doc = $DB->get_record_sql($sql, array($idcourt));
+            WHERE cf.idcourt = ? OR cf.externalid = ?";
+        $doc = $DB->get_record_sql($sql, array($idDocument, $idDocument));
 
         if ($doc) {
             $module = get_coursemodule_from_id(null, $doc->cm);
@@ -1033,7 +1052,7 @@ function plagiarism_compilatio_before_standard_top_of_body_html() {
     $params = array(
         $CFG->httpswwwroot,
         count($alerts),
-        $idcourt,
+        $idDocument,
         "<div id='compilatio-show-notifications' title='" . get_string("display_notifications", "plagiarism_compilatio")
             . "' class='compilatio-icon active'><i class='fa fa-bell fa-2x'></i><span id='count-alerts'>1</span></div>",
         "<div id='compi-notifications'><h5 id='compi-notif-title'>" .
@@ -1221,7 +1240,11 @@ function compilatio_update_meta() {
 
     $filemaxsize = ws_helper::get_allowed_file_max_size();
     $filetypes = ws_helper::get_allowed_file_types();
-
+    
+    if (empty(get_config('plagiarism_compilatio', 'nb_mots_min'))) {
+        set_config('nb_mots_min', 100, 'plagiarism_compilatio');
+    }
+    
     $compilatio = compilatio_get_compilatio_service(get_config('plagiarism_compilatio', 'apiconfigid'));
     $idgroupe = $compilatio->get_id_groupe();
 
@@ -1450,7 +1473,7 @@ function compilatio_get_form_elements($mform, $defaults = false, $modulename = '
                 $group[] = $mform->createElement("html", "<p style='color: #b94a48;'>" .
                     get_string('activate_submissiondraft', 'plagiarism_compilatio',
                     get_string('submissiondrafts', 'assign')) .
-                    "<b>" . get_string('submissionsettings', 'assign') . ".</b></p>");
+                    " <b>" . get_string('submissionsettings', 'assign') . ".</b></p>");
                 $mform->addGroup($group, 'activatesubmissiondraft', '', ' ', false);
                 $mform->hideIf('activatesubmissiondraft', 'submissiondrafts', 'eq', '1');
             }
@@ -1904,13 +1927,14 @@ function compilatio_startanalyse($plagiarismfile, $plagiarismsettings = '') {
     $compilatio = compilatio_get_compilatio_service($plagiarismfile->apiconfigid);
 
     $analyse = $compilatio->start_analyse($plagiarismfile->externalid);
-
+    
     if ($analyse === true) {
         // Update plagiarism record.
         $plagiarismfile->statuscode = COMPILATIO_STATUSCODE_IN_QUEUE;
         $plagiarismfile->timesubmitted = time();
         $DB->update_record('plagiarism_compilatio_files', $plagiarismfile);
     } else {
+        // VP SOAP Faults.
         if ($analyse->code == 'INVALID_ID_DOCUMENT') {
             $plagiarismfile->statuscode = COMPILATIO_STATUSCODE_NOT_FOUND;
             $DB->update_record('plagiarism_compilatio_files', $plagiarismfile);
@@ -1921,6 +1945,21 @@ function compilatio_startanalyse($plagiarismfile, $plagiarismsettings = '') {
             preg_match('~least (\d+)~', $analyse->string, $nbmotsmin);
             set_config('nb_mots_min', $nbmotsmin[1], 'plagiarism_compilatio');
             return $analyse;
+        // Elastisafe SOAP Faults.
+        } else if ($analyse->code == 'startDocumentAnalyse error') {
+            if ($analyse->string == 'Invalid document id') {
+                $plagiarismfile->statuscode = COMPILATIO_STATUSCODE_NOT_FOUND;
+                $DB->update_record('plagiarism_compilatio_files', $plagiarismfile);
+                return $analyse;
+
+            } else if (strpos($analyse->string, 'max file size') !== false) {
+                $plagiarismfile->statuscode = COMPILATIO_STATUSCODE_TOO_LONG;
+                $DB->update_record('plagiarism_compilatio_files', $plagiarismfile);
+                preg_match('~of (\d+)~', $analyse->string, $nbmotsmax);
+                set_config('nb_mots_max', $nbmotsmax[1], 'plagiarism_compilatio');
+                return $analyse;
+            }
+
         } else {
             echo $OUTPUT->notification(get_string('failedanalysis', 'plagiarism_compilatio') . $analyse->string);
             return $analyse;
@@ -1999,6 +2038,7 @@ function compilatio_check_analysis($plagiarismfile, $manuallytriggered = false) 
         if (!empty($nbmotsmin) && $docstatus->documentProperties->wordCount < $nbmotsmin) {
             $plagiarismfile->statuscode = COMPILATIO_STATUSCODE_TOO_SHORT;
         }
+
         // Optional yellow warning in submissions.
         $plagiarismfile->errorresponse = $docstatus->documentProperties->warning;
         $DB->update_record('plagiarism_compilatio_files', $plagiarismfile);
@@ -2129,6 +2169,9 @@ function compilatio_get_statistics($cmid) {
     $counttooshortsql = $sql . "AND statuscode='" . COMPILATIO_STATUSCODE_TOO_SHORT . "'";
     $counttooshort = $DB->count_records_sql($counttooshortsql, array($cmid));
 
+    $counttoolongsql = $sql . "AND statuscode='" . COMPILATIO_STATUSCODE_TOO_LONG . "'";
+    $counttoolong = $DB->count_records_sql($counttoolongsql, array($cmid));
+
     $countnotfoundsql = $sql . "AND statuscode='" . COMPILATIO_STATUSCODE_NOT_FOUND . "'";
     $countnotfound = $DB->count_records_sql($countnotfoundsql, array($cmid));
 
@@ -2216,6 +2259,9 @@ function compilatio_get_statistics($cmid) {
     if ($counttooshort !== 0) {
         $errors[] = array("not_analyzed_tooshort", $counttooshort);
     }
+    if ($counttoolong !== 0) {
+        $errors[] = array("not_analyzed_toolong", $counttoolong);
+    }
     if ($countnotfound !== 0) {
         $errors[] = array("documents_notfound", $countnotfound);
     }
@@ -2262,6 +2308,16 @@ function compilatio_get_too_short_files($cmid) {
 }
 
 /**
+ * Lists too long documents in the assignment
+ *
+ * @param  string $cmid Course module ID
+ * @return array        containing the student & the file
+ */
+function compilatio_get_too_long_files($cmid) {
+    return compilatio_get_files_by_status_code($cmid, COMPILATIO_STATUSCODE_TOO_LONG);
+}
+
+/**
  * Lists unextractable documents in the assignment
  *
  * @param  string $cmid Course module ID
@@ -2282,53 +2338,65 @@ function compilatio_get_failed_analysis_files($cmid) {
 }
 
 /**
- * Lists files of an assignment according to the status code
- *
- * @param  string $cmid       Course module ID
- * @param  int    $statuscode Status Code
- * @return array              containing the student & the file
- */
-function compilatio_get_files_by_status_code($cmid, $statuscode) {
-
-    global $DB;
-
-    $sql = "
-        SELECT DISTINCT pcf.id, pcf.filename, usr.firstname, usr.lastname
-        FROM {plagiarism_compilatio_files} pcf
-        JOIN {user} usr ON pcf.userid= usr.id
-        WHERE pcf.cm=? AND statuscode = ?";
-
-    $files = $DB->get_records_sql($sql, array($cmid, $statuscode));
-
-    return array_map(
-        function ($file) {
-            return $file->lastname . " " . $file->firstname . " : " . $file->filename;
-        }, $files);
-}
-
-/**
  * List files that have reach max attempts
  *
  * @param  int $cmid    Course module ID
  * @return array        Array contains files
  */
 function compilatio_get_max_attempts_files($cmid) {
+    return compilatio_get_files_by_status_code($cmid, COMPILATIO_STATUSCODE_UNEXTRACTABLE, 6);
+}
+
+/**
+ * Lists files of an assignment according to the status code
+ *
+ * @param  string $cmid       Course module ID
+ * @param  int    $statuscode Status Code
+ * @return array              containing the student & the file
+ */
+function compilatio_get_files_by_status_code($cmid, $statuscode, $attempt = 0) {
 
     global $DB;
 
-    $sql = "
-        SELECT DISTINCT pcf.id, pcf.filename, usr.firstname, usr.lastname
+    $sql = "SELECT DISTINCT pcf.id, pcf.filename, pcf.userid
         FROM {plagiarism_compilatio_files} pcf
-        JOIN {user} usr ON pcf.userid= usr.id
-        WHERE pcf.cm=? AND statuscode = ? AND pcf.attempt >= 6";
+        WHERE pcf.cm=? AND statuscode = ? AND pcf.attempt >= ?";
 
-    $files = $DB->get_records_sql($sql, array($cmid, COMPILATIO_STATUSCODE_UNEXTRACTABLE));
+    $files = $DB->get_records_sql($sql, array($cmid, $statuscode, $attempt));
 
-    return array_map(
-        function ($file) {
-            return $file->lastname . " " . $file->firstname . " : " . $file->filename;
-        }, $files);
+    if (!empty($files)) {
+        // Don't display user name for anonymous assign.
+        $sql = "SELECT blindmarking, assign.id FROM {course_modules} cm
+            JOIN {assign} assign ON cm.instance= assign.id
+            WHERE cm.id = $cmid";
+        $anonymousassign = $DB->get_record_sql($sql);
 
+        if (!empty($anonymousassign) && $anonymousassign->blindmarking) {
+            foreach ($files as $file) {
+                $anonymousid = $DB->get_field('assign_user_mapping', 'id',
+                    array("assignment" => $anonymousassign->id, "userid" => $file->userid));
+                $file->user = get_string('hiddenuser', 'assign') . " " . $anonymousid;
+            }
+
+            return array_map(
+                function ($file) {
+                    return $file->user . " : " . $file->filename;
+                }, $files);
+        } else {
+            foreach ($files as $file) {
+                $user = $DB->get_record('user', array("id" => $file->userid));
+                $file->lastname = $user->lastname;
+                $file->firstname = $user->firstname;
+            }
+
+            return array_map(
+                function ($file) {
+                    return $file->lastname . " " . $file->firstname . " : " . $file->filename;
+                }, $files);
+        }
+    } else {
+        return array();
+    }
 }
 
 /**
@@ -2758,6 +2826,12 @@ function compilatio_get_global_statistics($html = true) {
                 . ' : ' . $counttooshort . '</br>';
             };
 
+            $counttoolong = $DB->count_records_sql($sql, array($row->cm, COMPILATIO_STATUSCODE_TOO_LONG));
+            if ($counttoolong > 0) {
+                $result["errors"] .= '- ' . get_string("stats_toolong", "plagiarism_compilatio")
+                . ' : ' . $counttoolong . '</br>';
+            };
+
             $countnotfound = $DB->count_records_sql($sql, array($row->cm, COMPILATIO_STATUSCODE_NOT_FOUND));
             if ($countnotfound > 0) {
                 $result["errors"] .= '- ' . get_string("stats_notfound", "plagiarism_compilatio")
@@ -2773,6 +2847,7 @@ function compilatio_get_global_statistics($html = true) {
             $result["errors_unsupported"] = $DB->count_records_sql($sql, array($row->cm, COMPILATIO_STATUSCODE_UNSUPPORTED));
             $result["errors_unextractable"] = $DB->count_records_sql($sql, array($row->cm, COMPILATIO_STATUSCODE_UNEXTRACTABLE));
             $result["errors_tooshort"] = $DB->count_records_sql($sql, array($row->cm, COMPILATIO_STATUSCODE_TOO_SHORT));
+            $result["errors_toolong"] = $DB->count_records_sql($sql, array($row->cm, COMPILATIO_STATUSCODE_TOO_LONG));
             $result["errors_notfound"] = $DB->count_records_sql($sql, array($row->cm, COMPILATIO_STATUSCODE_NOT_FOUND));
             $result["errors_failed"] = $DB->count_records_sql($sql, array($row->cm, COMPILATIO_STATUSCODE_FAILED));
         }

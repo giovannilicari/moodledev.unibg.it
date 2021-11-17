@@ -40,6 +40,7 @@ The following placeholders may be included in the message:
 * Link to user\'s profile page {$a->profileurl}
 * User email {$a->email}
 * User fullname {$a->fullname}';
+$string['enrolme'] = 'Enrol me';
 $string['general'] = 'General';
 $string['filtering'] = 'User Filtering';
 
@@ -56,6 +57,7 @@ $string['role_help'] = 'Power users can use this setting to change the permissio
 
 $string['method'] = 'Enrol When';
 $string['m_site'] = 'Logging into Site';
+$string['m_confirmation'] = 'Confirmation on enrol screen';
 $string['m_course'] = 'Loading the Course';
 $string['method_help'] = 'Power users can use this setting to change the plugin\'s behaviour so that users are enrolled to the course upon logging in rather than waiting for them to access the course. This is helpful for courses which should be visible on a users "my courses" list by default.';
 
@@ -80,6 +82,7 @@ $string['alwaysenrol_help'] = 'When set to Yes the plugins will always enrol use
 
 $string['selfunenrol'] = 'Enable self unenrol';
 $string['selfunenrol_help'] = 'When set to Yes the users can unenrol by themself.';
+$string['selfunenrol_desc'] = 'Allow users to unenrol themself by default in new Autoenrol instances.';
 
 $string['groupname'] = 'Group name';
 $string['groupname_help'] = 'When you group by User Filter only a group will be created and this will be the name of the group.';
